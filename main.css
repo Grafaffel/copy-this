@@ -6,4 +6,42 @@ body {
     color: white;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 100vh;
+    flex-wrap: wrap;
+}
+
+code {
+    font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", "Liberation Mono", "DejaVu Sans Mono", "Courier New", monospace;
+    padding: 1rem;
+    border-radius: 0.7rem;
+    border: 1px solid hsl(0, 0%, 11%);
+    background-color: hsl(0, 0%, 8%);
+}
+
+.toast {
+    position: fixed;
+    opacity: 0;
+    scale: 0.95;
+    opacity: 0;
+    bottom: 20px;
+    right: -20px;
+    padding: 20px;
+    border-radius: 0.7rem;
+    border: 1px solid hsl(108, 17%, 22%);
+    background-color: hsl(108, 17%, 13%);
+    color: #fff;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.toast.show {
+    scale: 1;
+    opacity: 1;
+    bottom: 20px;
+    right: 20px;
+    transition: all 0.3s ease;
 }
