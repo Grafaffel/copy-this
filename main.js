@@ -1,4 +1,10 @@
-const copy = (text) => navigator.clipboard.writeText(text);
+const copy = (text) => {
+    navigator.clipboard.writeText(text)
+
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 3000);
+};
+
 const codeblock = document.querySelector('code');
 const toast = document.querySelector('.toast');
 
@@ -12,6 +18,3 @@ codeblock.innerText = text;
 
 copy(text);
 codeblock.addEventListener('click', () => copy(text));
-
-toast.classList.add('show');
-setTimeout(() => toast.classList.remove('show'), 3000);
