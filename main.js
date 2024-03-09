@@ -11,6 +11,7 @@ text = text.replace("\n", `
 codeblock.innerText = text;
 
 copy(text);
+codeblock.addEventListener('click', () => copy(text));
 
 toast.classList.add('show');
 setTimeout(() => toast.classList.remove('show'), 3000);
