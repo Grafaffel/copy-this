@@ -14,7 +14,7 @@ text = text.replace("%20", ' ');
 text = text.replace("%2", '/');
 text = text.replace("\n", `
 `);
-codeblock.innerText = text || 'Add ?text=you-text to copy some text!';
+codeblock.innerText = text || 'Add ?text=your-text to copy some text!';
 
 copy(text);
 codeblock.addEventListener('click', () => copy(text));
