@@ -3,11 +3,13 @@
 :root {
     --class: #FFC799;
     --number: #FFC799;
-    --identifier: #fff;
-    --sign: #9b9b9b;
+    --identifier: #FFF;
+    --sign: #9B9B9B;
     --string: #99FFE4;
     --keyword: #A0A0A0;
-    --comment: #a19595;
+    --comment: #A19595;
+    --diff-deletion: hsla(0, 100%, 50%, 0.2);
+    --diff-addition: hsla(135, 100%, 50%, 0.2);
 }
 
 body {
@@ -124,4 +126,27 @@ code:active {
 
 .hljs-doctag {
     color: var(--comment) !important;
+}
+
+.hljs-selector-tag,
+.hljs-selector-id,
+.hljs-selector-class {
+    color: var(--class) !important;
+}
+
+.hljs-selector-psuedo,
+.hljs-selector-attr {
+    color: var(--sign) !important;
+}
+
+.hljs-addition {
+    padding: 3px;
+    color: var(--identifier) !important;
+    background-color: var(--diff-addition) !important;
+}
+
+.hljs-deletion {
+    padding: 3px;
+    color: var(--identifier) !important;
+    background-color: var(--diff-deletion) !important;
 }
