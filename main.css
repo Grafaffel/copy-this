@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
+:root {
+    --class: #FFC799;
+    --number: #FFC799;
+    --identifier: #fff;
+    --sign: #9b9b9b;
+    --string: #99FFE4;
+    --keyword: #A0A0A0;
+    --comment: #a19595;
+}
+
 body {
     background-color: black;
     font-family: "Inter", sans-serif;
@@ -17,6 +27,7 @@ body {
 }
 
 .github-logo {
+    cursor: pointer;
     width: 35px;
     height: 35px;
     position: absolute;
@@ -36,6 +47,19 @@ code {
     border: 1px solid hsl(0, 0%, 11%);
     background-color: hsl(0, 0%, 8%);
     max-width: 95%;
+    box-shadow: 0 0 40px hsla(0, 0%, 11%, 0.7);
+    transition: all 0.3s ease;
+}
+
+code:hover {
+    background-color: hsl(0, 0%, 9%);
+    transition: all 0.3s ease;
+}
+
+code:active {
+    scale: 0.98;
+    background-color: hsl(0, 0%, 11%);
+    transition: all 0.3s ease;
 }
 
 .toast {
@@ -60,4 +84,44 @@ code {
     bottom: 20px;
     right: 20px;
     transition: all 0.3s ease;
+}
+
+.hljs-keyword {
+    color: var(--keyword) !important;
+}
+
+.hljs-variable {
+    color: var(--identifier) !important;
+}
+
+.hljs-title {
+    color: var(--class) !important;
+}
+
+.hljs-string {
+    color: var(--string) !important;
+}
+
+.hljs-property {
+    color: var(--identifier) !important;
+}
+
+.hljs-comment {
+    color: var(--comment) !important;
+}
+
+.hljs-built_in {
+    color: var(--sign) !important;
+}
+
+.hljs-number {
+    color: var(--number) !important;
+}
+
+.hljs-regexp {
+    color: var(--string) !important;
+}
+
+.hljs-doctag {
+    color: var(--comment) !important;
 }
