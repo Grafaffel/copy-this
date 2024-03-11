@@ -43,7 +43,7 @@ body {
 
 code {
     cursor: pointer;
-    font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", "Liberation Mono", "DejaVu Sans Mono", "Courier New", monospace;
+    font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", "Liberation Mono", "DejaVu Sans Mono", monospace;
     padding: 1rem;
     border-radius: 0.7rem;
     border: 1px solid hsl(0, 0%, 11%);
