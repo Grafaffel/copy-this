@@ -28,6 +28,10 @@ body {
     overflow: hidden;
 }
 
+*::selection {
+    background-color: hsla(0, 0%, 40%, 0.4) !important;
+}
+
 .github-logo {
     cursor: pointer;
     width: 35px;
@@ -42,6 +46,7 @@ body {
 }
 
 code {
+    -webkit-tap-highlight-color: transparent;
     cursor: pointer;
     font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", "Liberation Mono", "DejaVu Sans Mono", monospace;
     padding: 1rem;
