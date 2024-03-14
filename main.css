@@ -95,63 +95,87 @@ code:active {
 
 .hljs-keyword {
     color: var(--keyword) !important;
+    font-weight: 500 !important;
+}
+
+.hljs-tag {
+    color: var(--keyword) !important;
+    font-weight: 500 !important;
+}
+
+.hljs-name {
+    color: var(--class) !important;
+    font-weight: 500 !important;
 }
 
 .hljs-variable {
     color: var(--identifier) !important;
+    font-weight: 500 !important;
 }
 
 .hljs-title {
     color: var(--class) !important;
+    font-weight: 500 !important;
 }
 
 .hljs-string {
     color: var(--string) !important;
+    font-weight: 500 !important;
 }
 
 .hljs-property {
     color: var(--identifier) !important;
+    font-weight: 500 !important;
 }
 
 .hljs-comment {
     color: var(--comment) !important;
+    font-weight: 500 !important;
 }
 
 .hljs-built_in {
     color: var(--sign) !important;
+    font-weight: 500 !important;
 }
 
 .hljs-number {
     color: var(--number) !important;
+    font-weight: 500 !important;
 }
 
 .hljs-regexp {
     color: var(--string) !important;
+    font-weight: 500 !important;
 }
 
 .hljs-doctag {
     color: var(--comment) !important;
+    font-weight: 500 !important;
 }
 
 .hljs-selector-tag,
 .hljs-selector-id,
 .hljs-selector-class {
     color: var(--class) !important;
+    font-weight: 500 !important;
 }
 
 .hljs-selector-psuedo,
 .hljs-selector-attr {
     color: var(--sign) !important;
+    font-weight: 500 !important;
 }
 
 .hljs-addition {
     padding: 3px;
     color: var(--identifier) !important;
     background-color: var(--diff-addition) !important;
+    font-weight: 500 !important;
 }
 
 .hljs-deletion {
     padding: 3px;
     color: var(--identifier) !important;
     background-color: var(--diff-deletion) !important;
+    font-weight: 500 !important;
 }
