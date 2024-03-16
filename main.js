@@ -64,5 +64,4 @@ codeInput.addEventListener('input', (e) => {
     } else {
         codeblock.innerText = text || 'Add ?text=your-text to copy some text!';
     }
-    console.log(url);
 });
