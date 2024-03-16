@@ -45,11 +45,40 @@ body {
     width: 100%;
 }
 
-code {
+button {
+    color: #fff;
+    text-align: center;
+    display: inline-block;
     -webkit-tap-highlight-color: transparent;
     cursor: pointer;
     font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", "Liberation Mono", "DejaVu Sans Mono", monospace;
-    padding: 1rem;
+    padding: 0.9rem;
+    border-radius: 0.7rem;
+    border: 1px solid hsl(0, 0%, 12%);
+    background-color: hsl(0, 0%, 10%);
+    box-shadow: 0 0 40px hsla(0, 0%, 11%, 0.7);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: hsl(0, 0%, 11%);
+    transition: all 0.3s ease;
+}
+
+button:active {
+    scale: 0.98;
+    background-color: hsl(0, 0%, 12%);
+    transition: all 0.3s ease;
+}
+
+#code-preview {
+    text-align: left;
+    line-height: 1.5rem;
+    display: inline-block;
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+    font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", "Liberation Mono", "DejaVu Sans Mono", monospace;
+    padding: 0.9rem;
     border-radius: 0.7rem;
     border: 1px solid hsl(0, 0%, 11%);
     background-color: hsl(0, 0%, 8%);
@@ -58,12 +87,12 @@ code {
     transition: all 0.3s ease;
 }
 
-code:hover {
+#code-preview:hover {
     background-color: hsl(0, 0%, 9%);
     transition: all 0.3s ease;
 }
 
-code:active {
+#code-preview:active {
     scale: 0.98;
     background-color: hsl(0, 0%, 11%);
     transition: all 0.3s ease;
@@ -92,6 +121,75 @@ code:active {
     right: 20px;
     transition: all 0.3s ease;
 }
+
+#create-dialog {
+    pointer-events: none;
+    display: none;
+    color: #fff;
+    border: 1px solid hsl(0, 0%, 11%);
+    background-color: hsl(0, 0%, 8%);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+#code-input {
+    pointer-events: none;
+    height: 382px;
+    width: 759px;
+    border: none;
+    background-color: hsl(0, 0%, 10%);
+    padding: 15px !important;
+    color: #fff;
+    font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", "Liberation Mono", "DejaVu Sans Mono", monospace;
+    border: 1px solid hsl(0, 0%, 12%);
+    border-radius: 8px;
+    resize: none;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+dialog[open] {
+    pointer-events: none;
+    opacity: 1;
+    scale: 1;
+    transition: all 0.3s ease-in-out allow-discrete;
+}
+
+@starting-style {
+    dialog[open] {
+        pointer-events: none;
+        display: none;
+        opacity: 0;
+        scale: 0.95;
+        transition: all 0.3s ease-in-out allow-discrete;
+    }
+}
+
+dialog {
+    pointer-events: none;
+    display: none;
+    opacity: 0;
+    scale: 0.95;
+    transition: all 0.3s ease-in-out allow-discrete;
+}
+
+dialog::backdrop {
+    backdrop-filter: blur(0px);
+    background-color: rgba(0, 0, 0, 0);
+    transition: all 0.3s ease-in-out allow-discrete;
+}
+
+dialog[open]::backdrop {
+    backdrop-filter: blur(7px);
+    background-color: rgba(0, 0, 0, 0.295);
+    transition: all 0.3s ease-in-out allow-discrete;
+}
+
 
 .hljs-keyword {
     color: var(--keyword) !important;

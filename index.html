@@ -7,25 +7,43 @@
     <title>Copy This!</title>
     <script src="main.js" defer></script>
     <link rel="stylesheet" href="main.css">
-    <meta name="og:title" content="Copy This!">
-    <meta name="og:image" content="/assets/og.png" />
-    <meta name="og:description" content="Simply copy text with just a Link!">
-    <meta name="description" content="Simply copy text with just a Link!">
+    <title>Copy This</title>
+    <meta name="description" content="Copy Text or Code snippets with just a link.">
+
+    <meta property="og:url" content="https://copy-this.vercel.app/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Copy This">
+    <meta property="og:description" content="Copy Text or Code snippets with just a link.">
+    <meta property="og:image" content="/assets/og.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="copy-this.vercel.app">
+    <meta property="twitter:url" content="https://copy-this.vercel.app/">
+    <meta name="twitter:title" content="Copy This">
+    <meta name="twitter:description" content="Copy Text or Code snippets with just a link.">
+    <meta name="twitter:image" content="/assets/og.png">
+
 </head>
 
 <body>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 
-    <!-- and it's easy to individually load additional languages -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
 
     <a target="_blank" href="https://github.com/grafaffel/copy-this/"><img class="github-logo"
             src="/assets/github-logo.svg" alt="GitHub Logo"></a>
+
+    <dialog id="create-dialog">
+        <code><textarea spellcheck="false" name="code" id="code-input"></textarea></code>
+    </dialog>
+
     <div class="toast">Copied!</div>
     <p>Copy This!</p>
     <div class="spacer"></div>
-    <code title="Click to copy manually!">Add ?text=your-text to copy some text!</code>
+    <pre><code id="code-preview" title="Click to copy manually!
+        
+Right click to edit">Add ?text=your-text to copy some text!</code></pre>
 </body>
 
 </html>
