@@ -13,14 +13,6 @@ const codeInput = document.getElementById('code-input');
 
 const urlParams = new URLSearchParams(window.location.search);
 
-const dialog = document.querySelector("dialog");
-dialog.addEventListener("click", (e) => {
-    if (e.target === dialog) {
-        // close the dialog
-        dialog.close();
-    }
-});
-
 let text = urlParams.get('text')
 let url
 
