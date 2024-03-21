@@ -31,7 +31,6 @@ if (lang) {
     codeblock.innerText = text || 'Add ?text=your-text to copy some text!';
 }
 
-copy(text);
 codeblock.addEventListener('click', () => copy(text));
 codeblock.addEventListener('contextmenu', (e) => {
     e.preventDefault();
