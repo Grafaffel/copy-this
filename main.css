@@ -1,6 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
 :root {
+    --background: black;
+    --text: white;
+    --selection: hsla(0, 0%, 40%, 0.4);
+    --button: hsl(0, 0%, 10%);
+    --button-shadow: hsla(0, 0%, 11%, 0.7);
+    --button-hover: hsl(0, 0%, 11%);
+    --button-active: hsl(0, 0%, 12%);
+    --button-border: hsl(0, 0%, 12%);
+
+    --toast: hsl(108, 17%, 13%);
+    --toast-border: hsl(108, 17%, 22%);
+
+    --dialog: hsl(0, 0%, 8%);
+    --dialog-border: hsl(0, 0%, 11%);
+
+    --editor: hsl(0, 0%, 10%);
+    --editor-border: hsl(0, 0%, 12%);
+
+    --code: hsl(0, 0%, 8%);
+    --code-shadow: hsla(0, 0%, 11%, 0.7);
+    --code-hover: hsl(0, 0%, 9%);
+    --code-active: hsl(0, 0%, 11%);
+    --code-border: hsl(0, 0%, 11%);
+
     --class: #FFC799;
     --number: #FFC799;
     --identifier: #FFF;
@@ -12,10 +36,48 @@
     --diff-addition: hsla(135, 100%, 50%, 0.2);
 }
 
+@media (prefers-color-scheme: light) {
+    :root {
+        --background: hsl(0, 0%, 100%);
+        --text: hsl(0, 0%, 7%);
+        --selection: hsla(0, 0%, 40%, 0.4);
+        --button: hsl(0, 0%, 90%);
+        --button-shadow: hsla(0, 0%, 89&, 0.7);
+        --button-hover: hsl(0, 0%, 89%);
+        --button-active: hsl(0, 0%, 88%);
+        --button-border: hsl(0, 0%, 88%);
+
+        --toast: hsl(108, 17%, 87%);
+        --toast-border: hsl(108, 17%, 78%);
+
+        --dialog: hsl(0, 0%, 92%);
+        --dialog-border: hsl(0, 0%, 89%);
+
+        --editor: hsl(0, 0%, 90%);
+        --editor-border: hsl(0, 0%, 88%);
+
+        --code: hsl(0, 0%, 92%);
+        --code-shadow: hsla(0, 0%, 89%, 0.7);
+        --code-hover: hsl(0, 0%, 91%);
+        --code-active: hsl(0, 0%, 89%);
+        --code-border: hsl(0, 0%, 89%);
+
+        --class: #FFC799;
+        --number: #FFC799;
+        --identifier: #000000;
+        --sign: #9B9B9B;
+        --string: #99FFE4;
+        --keyword: #A0A0A0;
+        --comment: #A19595;
+        --diff-deletion: hsla(0, 100%, 50%, 0.2);
+        --diff-addition: hsla(135, 100%, 50%, 0.2);
+    }
+}
+
 body {
-    background-color: black;
+    background-color: var(--background);
     font-family: "Inter", sans-serif;
-    color: white;
+    color: var(--text);
     margin: 0;
     padding: 0;
     display: flex;
@@ -29,7 +91,7 @@ body {
 }
 
 *::selection {
-    background-color: hsla(0, 0%, 40%, 0.4) !important;
+    background-color: var(--selection) !important;
 }
 
 .github-logo {
@@ -46,7 +108,7 @@ body {
 }
 
 button {
-    color: #fff;
+    color: var(--text);
     text-align: center;
     display: inline-block;
     -webkit-tap-highlight-color: transparent;
@@ -54,20 +116,20 @@ button {
     font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", "Liberation Mono", "DejaVu Sans Mono", monospace;
     padding: 0.9rem;
     border-radius: 0.7rem;
-    border: 1px solid hsl(0, 0%, 12%);
-    background-color: hsl(0, 0%, 10%);
-    box-shadow: 0 0 40px hsla(0, 0%, 11%, 0.7);
+    border: 1px solid var(--button-border);
+    background-color: var(--button);
+    box-shadow: 0 0 40px var(--button-shadow);
     transition: all 0.3s ease;
 }
 
 button:hover {
-    background-color: hsl(0, 0%, 11%);
+    background-color: var(--button-hover);
     transition: all 0.3s ease;
 }
 
 button:active {
     scale: 0.98;
-    background-color: hsl(0, 0%, 12%);
+    background-color: var(--code-active);
     transition: all 0.3s ease;
 }
 
@@ -80,25 +142,26 @@ button:active {
     font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", "Liberation Mono", "DejaVu Sans Mono", monospace;
     padding: 0.9rem;
     border-radius: 0.7rem;
-    border: 1px solid hsl(0, 0%, 11%);
-    background-color: hsl(0, 0%, 8%);
+    border: 1px solid var(--code-border);
+    background-color: var(--code);
     max-width: 95%;
-    box-shadow: 0 0 40px hsla(0, 0%, 11%, 0.7);
+    box-shadow: 0 0 40px var(--code-shadow);
     transition: all 0.3s ease;
 }
 
 #code-preview:hover {
-    background-color: hsl(0, 0%, 9%);
+    background-color: var(--code-hover);
     transition: all 0.3s ease;
 }
 
 #code-preview:active {
     scale: 0.98;
-    background-color: hsl(0, 0%, 11%);
+    background-color: var(--code-active);
     transition: all 0.3s ease;
 }
 
 .toast {
+    color: var(--text) !important;
     position: fixed;
     opacity: 0;
     scale: 0.95;
@@ -107,8 +170,8 @@ button:active {
     right: -20px;
     padding: 20px;
     border-radius: 0.7rem;
-    border: 1px solid hsl(108, 17%, 22%);
-    background-color: hsl(108, 17%, 13%);
+    border: 1px solid var(--toast-border);
+    background-color: var(--toast);
     color: #fff;
     display: block;
     transition: all 0.3s ease;
@@ -126,8 +189,8 @@ button:active {
     pointer-events: none;
     display: none;
     color: #fff;
-    border: 1px solid hsl(0, 0%, 11%);
-    background-color: hsl(0, 0%, 8%);
+    border: 1px solid var(--dialog-border);
+    background-color: var(--dialog);
     border-radius: 10px;
     overflow: hidden;
     display: flex;
@@ -138,15 +201,16 @@ button:active {
 }
 
 #code-input {
+    color: var(--text) !important;
     pointer-events: none;
     height: 382px;
     width: 759px;
     border: none;
-    background-color: hsl(0, 0%, 10%);
+    background-color: var(--editor);
     padding: 15px !important;
     color: #fff;
     font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", "Liberation Mono", "DejaVu Sans Mono", monospace;
-    border: 1px solid hsl(0, 0%, 12%);
+    border: 1px solid var(--editor-border);
     border-radius: 8px;
     resize: none;
     outline: none;
