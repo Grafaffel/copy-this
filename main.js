@@ -60,9 +60,8 @@ codeInput.addEventListener('input', (e) => {
     url = url.replace('+', '%2B');
     url = url.replace('/', '%2F');
     url = url.replace('\\n', '%0A');
-    url = url.replace('\n', '%0A');
-    url = url.replace('\r', '%0D');
-    url = url.replace('\t', '%09');
+    url = url.replace('\\r', '%0D');
+    url = url.replace('\\t', '%09');
     url = url.replace('#', '%23');
     url = url.replace('&', '%26');
     url = url.replace('=', '%3D');
